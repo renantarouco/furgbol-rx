@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/renan/Workspace/cpp/furgbol/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7ba7c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7ba7c.dir/build.make CMakeFiles/cmTC_7ba7c.dir/build
+make[1]: Entering directory '/home/renan/Workspace/cpp/furgbol/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7ba7c.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_7ba7c.dir/CheckSymbolExists.c.o   -c /home/renan/Workspace/cpp/furgbol/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_7ba7c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7ba7c.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_7ba7c.dir/CheckSymbolExists.c.o  -o cmTC_7ba7c 
+CMakeFiles/cmTC_7ba7c.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_7ba7c.dir/build.make:97: recipe for target 'cmTC_7ba7c' failed
+make[1]: *** [cmTC_7ba7c] Error 1
+make[1]: Leaving directory '/home/renan/Workspace/cpp/furgbol/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_7ba7c/fast' failed
+make: *** [cmTC_7ba7c/fast] Error 2
+
+File /home/renan/Workspace/cpp/furgbol/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/renan/Workspace/cpp/furgbol/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e3874/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e3874.dir/build.make CMakeFiles/cmTC_e3874.dir/build
+make[1]: Entering directory '/home/renan/Workspace/cpp/furgbol/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e3874.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_e3874.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e3874
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e3874.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_e3874.dir/CheckFunctionExists.c.o  -o cmTC_e3874 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_e3874.dir/build.make:97: recipe for target 'cmTC_e3874' failed
+make[1]: *** [cmTC_e3874] Error 1
+make[1]: Leaving directory '/home/renan/Workspace/cpp/furgbol/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_e3874/fast' failed
+make: *** [cmTC_e3874/fast] Error 2
+
+
