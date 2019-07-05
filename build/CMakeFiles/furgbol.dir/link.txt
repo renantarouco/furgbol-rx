@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/furgbol.dir/src/main.cc.o  -o furgbol libfurgbol_io.a libfurgbol_serialization.a /usr/lib/x86_64-linux-gnu/libboost_system.so /usr/lib/x86_64-linux-gnu/libprotobuf.so -lpthread 
