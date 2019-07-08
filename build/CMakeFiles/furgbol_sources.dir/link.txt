@@ -1,2 +1,0 @@
-/usr/bin/ar qc libfurgbol_sources.a  CMakeFiles/furgbol_sources.dir/src/sources/sources.cc.o
-/usr/bin/ranlib libfurgbol_sources.a

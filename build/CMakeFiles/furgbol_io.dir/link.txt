@@ -1,2 +1,0 @@
-/usr/bin/ar qc libfurgbol_io.a  CMakeFiles/furgbol_io.dir/src/io/multicast_receiver.cc.o
-/usr/bin/ranlib libfurgbol_io.a
