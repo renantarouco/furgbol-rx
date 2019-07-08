@@ -233,7 +233,13 @@ furgbol_SOURCE_DIR:STATIC=/home/renan/Workspace/cpp/furgbol
 furgbol_io_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libboost_system.so;
 
 //Dependencies for the target
+furgbol_operators_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libprotobuf.so;general;-lpthread;
+
+//Dependencies for the target
 furgbol_serialization_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libprotobuf.so;general;-lpthread;
+
+//Dependencies for the target
+furgbol_sources_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libboost_system.so;
 
 
 ########################

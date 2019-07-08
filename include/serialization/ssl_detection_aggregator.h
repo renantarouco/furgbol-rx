@@ -1,3 +1,5 @@
+#include <functional>
+
 #include <rxcpp/rx.hpp>
 
 #include "messages_robocup_ssl_detection.pb.h"
@@ -9,5 +11,6 @@ namespace serialization {
         SSLDetectionAggregator(int, rxcpp::observable<SSL_DetectionFrame>);
         rxcpp::observable<SSL_DetectionFrame> world_frame;
     };
+    std::function<rxcpp::observable<SSL_DetectionFrame>(rxcpp::observable<SSL_DetectionFrame>)> aggregate_cammeras(int);
 }
 }

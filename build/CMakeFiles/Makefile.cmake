@@ -126,7 +126,9 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/furgbol.dir/DependInfo.cmake"
-  "CMakeFiles/furgbol_io.dir/DependInfo.cmake"
   "CMakeFiles/furgbol_serialization.dir/DependInfo.cmake"
+  "CMakeFiles/furgbol_operators.dir/DependInfo.cmake"
+  "CMakeFiles/furgbol_io.dir/DependInfo.cmake"
+  "CMakeFiles/furgbol_sources.dir/DependInfo.cmake"
+  "CMakeFiles/furgbol.dir/DependInfo.cmake"
   )

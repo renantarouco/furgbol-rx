@@ -1,4 +1,5 @@
 #include <string>
+#include <functional>
 
 #include <rxcpp/rx.hpp>
 
@@ -13,5 +14,6 @@ namespace serialization {
         rxcpp::observable<SSL_DetectionFrame> detection;
         rxcpp::observable<SSL_GeometryData> geometry;
     };
+    std::function<rxcpp::observable<SSL_DetectionFrame>(rxcpp::observable<std::string>)> parse_detection();
 }
 }

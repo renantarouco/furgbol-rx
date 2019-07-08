@@ -679,6 +679,8 @@ rx-includes.hpp
 ../ext/RxCpp/Rx/v2/src/rxcpp/rx-includes.hpp
 
 ../include/serialization/ssl_detection_aggregator.h
+functional
+-
 rxcpp/rx.hpp
 -
 messages_robocup_ssl_detection.pb.h
@@ -692,6 +694,8 @@ messages_robocup_ssl_detection.pb.h
 
 ../include/serialization/ssl_wrapper_parser.h
 string
+-
+functional
 -
 rxcpp/rx.hpp
 -

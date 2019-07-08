@@ -92,6 +92,8 @@ furgbol: CMakeFiles/furgbol.dir/src/main.cc.o
 furgbol: CMakeFiles/furgbol.dir/build.make
 furgbol: libfurgbol_io.a
 furgbol: libfurgbol_serialization.a
+furgbol: libfurgbol_sources.a
+furgbol: libfurgbol_operators.a
 furgbol: /usr/lib/x86_64-linux-gnu/libboost_system.so
 furgbol: /usr/lib/x86_64-linux-gnu/libprotobuf.so
 furgbol: CMakeFiles/furgbol.dir/link.txt

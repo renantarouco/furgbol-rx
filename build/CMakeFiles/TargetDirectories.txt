@@ -1,5 +1,7 @@
 /home/renan/Workspace/cpp/furgbol/build/CMakeFiles/rebuild_cache.dir
-/home/renan/Workspace/cpp/furgbol/build/CMakeFiles/furgbol.dir
-/home/renan/Workspace/cpp/furgbol/build/CMakeFiles/furgbol_io.dir
-/home/renan/Workspace/cpp/furgbol/build/CMakeFiles/edit_cache.dir
 /home/renan/Workspace/cpp/furgbol/build/CMakeFiles/furgbol_serialization.dir
+/home/renan/Workspace/cpp/furgbol/build/CMakeFiles/furgbol_operators.dir
+/home/renan/Workspace/cpp/furgbol/build/CMakeFiles/edit_cache.dir
+/home/renan/Workspace/cpp/furgbol/build/CMakeFiles/furgbol_io.dir
+/home/renan/Workspace/cpp/furgbol/build/CMakeFiles/furgbol_sources.dir
+/home/renan/Workspace/cpp/furgbol/build/CMakeFiles/furgbol.dir

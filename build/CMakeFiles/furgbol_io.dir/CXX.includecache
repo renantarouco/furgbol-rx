@@ -681,6 +681,8 @@ rx-includes.hpp
 ../include/io/multicast_receiver.h
 string
 -
+functional
+-
 rxcpp/rx.hpp
 -
 boost/asio.hpp

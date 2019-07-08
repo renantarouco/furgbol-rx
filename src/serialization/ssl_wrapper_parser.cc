@@ -22,5 +22,19 @@ namespace serialization {
             rxcpp::operators::map([](SSL_WrapperPacket wp){ return wp.geometry(); });
         packet_.connect();
     }
+    std::function<rxcpp::observable<SSL_DetectionFrame>(rxcpp::observable<std::string>)> parse_detection() {
+        return [](rxcpp::observable<std::string> multicast_datagram) {
+            return multicast_datagram |
+                rxcpp::operators::map([](std::string data){
+                    SSL_WrapperPacket packet;
+                    if (!packet.ParseFromString(data)) {
+                        throw std::runtime_error("parsing error");
+                    }
+                    return packet;
+                }) |
+                rxcpp::operators::filter([](SSL_WrapperPacket wp){ return wp.has_detection(); }) |
+                rxcpp::operators::map([](SSL_WrapperPacket wp){ return wp.detection(); });
+        };
+    }
 }
 }

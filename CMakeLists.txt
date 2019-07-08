@@ -34,8 +34,21 @@ add_library(furgbol_serialization
 target_link_libraries(furgbol_serialization
     ${PROTOBUF_LIBRARIES})
 
+add_library(furgbol_sources
+    "src/sources/sources.cc")
+target_link_libraries(furgbol_sources
+    ${Boost_SYSTEM_LIBRARY})
+
+add_library(furgbol_operators
+    ${PROTO_CPP}
+    "src/operators/operators.cc")
+target_link_libraries(furgbol_operators
+    ${PROTOBUF_LIBRARIES})
+
 add_executable(furgbol
     "src/main.cc")
 target_link_libraries(furgbol
     furgbol_io
-    furgbol_serialization)
+    furgbol_serialization
+    furgbol_sources
+    furgbol_operators)

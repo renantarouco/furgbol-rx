@@ -104,10 +104,14 @@ CMakeFiles/furgbol.dir/src/main.cc.o
  ../ext/RxCpp/Rx/v2/src/rxcpp/subjects/rx-replaysubject.hpp
  ../ext/RxCpp/Rx/v2/src/rxcpp/subjects/rx-subject.hpp
  ../ext/RxCpp/Rx/v2/src/rxcpp/subjects/rx-synchronize.hpp
+ ../include/definitions/definitions.h
  ../include/io/multicast_receiver.h
+ ../include/operators/operators.h
  ../include/serialization/ssl_detection_aggregator.h
  ../include/serialization/ssl_detection_normalizer.h
  ../include/serialization/ssl_wrapper_parser.h
+ ../include/sources/sources.h
  /home/renan/Workspace/cpp/furgbol/src/main.cc
  messages_robocup_ssl_detection.pb.h
  messages_robocup_ssl_geometry.pb.h
+ messages_robocup_ssl_wrapper.pb.h

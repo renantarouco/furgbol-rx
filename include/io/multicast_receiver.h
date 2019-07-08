@@ -1,4 +1,5 @@
 #include <string>
+#include <functional>
 
 #include <rxcpp/rx.hpp>
 #include <boost/asio.hpp>

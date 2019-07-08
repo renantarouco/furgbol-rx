@@ -111,17 +111,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named furgbol
+# Target rules for targets named furgbol_serialization
 
 # Build rule for target.
-furgbol: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 furgbol
-.PHONY : furgbol
+furgbol_serialization: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 furgbol_serialization
+.PHONY : furgbol_serialization
 
 # fast build rule for target.
-furgbol/fast:
-	$(MAKE) -f CMakeFiles/furgbol.dir/build.make CMakeFiles/furgbol.dir/build
-.PHONY : furgbol/fast
+furgbol_serialization/fast:
+	$(MAKE) -f CMakeFiles/furgbol_serialization.dir/build.make CMakeFiles/furgbol_serialization.dir/build
+.PHONY : furgbol_serialization/fast
+
+#=============================================================================
+# Target rules for targets named furgbol_operators
+
+# Build rule for target.
+furgbol_operators: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 furgbol_operators
+.PHONY : furgbol_operators
+
+# fast build rule for target.
+furgbol_operators/fast:
+	$(MAKE) -f CMakeFiles/furgbol_operators.dir/build.make CMakeFiles/furgbol_operators.dir/build
+.PHONY : furgbol_operators/fast
 
 #=============================================================================
 # Target rules for targets named furgbol_io
@@ -137,17 +150,30 @@ furgbol_io/fast:
 .PHONY : furgbol_io/fast
 
 #=============================================================================
-# Target rules for targets named furgbol_serialization
+# Target rules for targets named furgbol_sources
 
 # Build rule for target.
-furgbol_serialization: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 furgbol_serialization
-.PHONY : furgbol_serialization
+furgbol_sources: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 furgbol_sources
+.PHONY : furgbol_sources
 
 # fast build rule for target.
-furgbol_serialization/fast:
-	$(MAKE) -f CMakeFiles/furgbol_serialization.dir/build.make CMakeFiles/furgbol_serialization.dir/build
-.PHONY : furgbol_serialization/fast
+furgbol_sources/fast:
+	$(MAKE) -f CMakeFiles/furgbol_sources.dir/build.make CMakeFiles/furgbol_sources.dir/build
+.PHONY : furgbol_sources/fast
+
+#=============================================================================
+# Target rules for targets named furgbol
+
+# Build rule for target.
+furgbol: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 furgbol
+.PHONY : furgbol
+
+# fast build rule for target.
+furgbol/fast:
+	$(MAKE) -f CMakeFiles/furgbol.dir/build.make CMakeFiles/furgbol.dir/build
+.PHONY : furgbol/fast
 
 grSim_Commands.pb.o: grSim_Commands.pb.cc.o
 
@@ -156,6 +182,7 @@ grSim_Commands.pb.o: grSim_Commands.pb.cc.o
 # target to build an object file
 grSim_Commands.pb.cc.o:
 	$(MAKE) -f CMakeFiles/furgbol_serialization.dir/build.make CMakeFiles/furgbol_serialization.dir/grSim_Commands.pb.cc.o
+	$(MAKE) -f CMakeFiles/furgbol_operators.dir/build.make CMakeFiles/furgbol_operators.dir/grSim_Commands.pb.cc.o
 .PHONY : grSim_Commands.pb.cc.o
 
 grSim_Commands.pb.i: grSim_Commands.pb.cc.i
@@ -165,6 +192,7 @@ grSim_Commands.pb.i: grSim_Commands.pb.cc.i
 # target to preprocess a source file
 grSim_Commands.pb.cc.i:
 	$(MAKE) -f CMakeFiles/furgbol_serialization.dir/build.make CMakeFiles/furgbol_serialization.dir/grSim_Commands.pb.cc.i
+	$(MAKE) -f CMakeFiles/furgbol_operators.dir/build.make CMakeFiles/furgbol_operators.dir/grSim_Commands.pb.cc.i
 .PHONY : grSim_Commands.pb.cc.i
 
 grSim_Commands.pb.s: grSim_Commands.pb.cc.s
@@ -174,6 +202,7 @@ grSim_Commands.pb.s: grSim_Commands.pb.cc.s
 # target to generate assembly for a file
 grSim_Commands.pb.cc.s:
 	$(MAKE) -f CMakeFiles/furgbol_serialization.dir/build.make CMakeFiles/furgbol_serialization.dir/grSim_Commands.pb.cc.s
+	$(MAKE) -f CMakeFiles/furgbol_operators.dir/build.make CMakeFiles/furgbol_operators.dir/grSim_Commands.pb.cc.s
 .PHONY : grSim_Commands.pb.cc.s
 
 grSim_Packet.pb.o: grSim_Packet.pb.cc.o
@@ -183,6 +212,7 @@ grSim_Packet.pb.o: grSim_Packet.pb.cc.o
 # target to build an object file
 grSim_Packet.pb.cc.o:
 	$(MAKE) -f CMakeFiles/furgbol_serialization.dir/build.make CMakeFiles/furgbol_serialization.dir/grSim_Packet.pb.cc.o
+	$(MAKE) -f CMakeFiles/furgbol_operators.dir/build.make CMakeFiles/furgbol_operators.dir/grSim_Packet.pb.cc.o
 .PHONY : grSim_Packet.pb.cc.o
 
 grSim_Packet.pb.i: grSim_Packet.pb.cc.i
@@ -192,6 +222,7 @@ grSim_Packet.pb.i: grSim_Packet.pb.cc.i
 # target to preprocess a source file
 grSim_Packet.pb.cc.i:
 	$(MAKE) -f CMakeFiles/furgbol_serialization.dir/build.make CMakeFiles/furgbol_serialization.dir/grSim_Packet.pb.cc.i
+	$(MAKE) -f CMakeFiles/furgbol_operators.dir/build.make CMakeFiles/furgbol_operators.dir/grSim_Packet.pb.cc.i
 .PHONY : grSim_Packet.pb.cc.i
 
 grSim_Packet.pb.s: grSim_Packet.pb.cc.s
@@ -201,6 +232,7 @@ grSim_Packet.pb.s: grSim_Packet.pb.cc.s
 # target to generate assembly for a file
 grSim_Packet.pb.cc.s:
 	$(MAKE) -f CMakeFiles/furgbol_serialization.dir/build.make CMakeFiles/furgbol_serialization.dir/grSim_Packet.pb.cc.s
+	$(MAKE) -f CMakeFiles/furgbol_operators.dir/build.make CMakeFiles/furgbol_operators.dir/grSim_Packet.pb.cc.s
 .PHONY : grSim_Packet.pb.cc.s
 
 grSim_Replacement.pb.o: grSim_Replacement.pb.cc.o
@@ -210,6 +242,7 @@ grSim_Replacement.pb.o: grSim_Replacement.pb.cc.o
 # target to build an object file
 grSim_Replacement.pb.cc.o:
 	$(MAKE) -f CMakeFiles/furgbol_serialization.dir/build.make CMakeFiles/furgbol_serialization.dir/grSim_Replacement.pb.cc.o
+	$(MAKE) -f CMakeFiles/furgbol_operators.dir/build.make CMakeFiles/furgbol_operators.dir/grSim_Replacement.pb.cc.o
 .PHONY : grSim_Replacement.pb.cc.o
 
 grSim_Replacement.pb.i: grSim_Replacement.pb.cc.i
@@ -219,6 +252,7 @@ grSim_Replacement.pb.i: grSim_Replacement.pb.cc.i
 # target to preprocess a source file
 grSim_Replacement.pb.cc.i:
 	$(MAKE) -f CMakeFiles/furgbol_serialization.dir/build.make CMakeFiles/furgbol_serialization.dir/grSim_Replacement.pb.cc.i
+	$(MAKE) -f CMakeFiles/furgbol_operators.dir/build.make CMakeFiles/furgbol_operators.dir/grSim_Replacement.pb.cc.i
 .PHONY : grSim_Replacement.pb.cc.i
 
 grSim_Replacement.pb.s: grSim_Replacement.pb.cc.s
@@ -228,6 +262,7 @@ grSim_Replacement.pb.s: grSim_Replacement.pb.cc.s
 # target to generate assembly for a file
 grSim_Replacement.pb.cc.s:
 	$(MAKE) -f CMakeFiles/furgbol_serialization.dir/build.make CMakeFiles/furgbol_serialization.dir/grSim_Replacement.pb.cc.s
+	$(MAKE) -f CMakeFiles/furgbol_operators.dir/build.make CMakeFiles/furgbol_operators.dir/grSim_Replacement.pb.cc.s
 .PHONY : grSim_Replacement.pb.cc.s
 
 messages_robocup_ssl_detection.pb.o: messages_robocup_ssl_detection.pb.cc.o
@@ -237,6 +272,7 @@ messages_robocup_ssl_detection.pb.o: messages_robocup_ssl_detection.pb.cc.o
 # target to build an object file
 messages_robocup_ssl_detection.pb.cc.o:
 	$(MAKE) -f CMakeFiles/furgbol_serialization.dir/build.make CMakeFiles/furgbol_serialization.dir/messages_robocup_ssl_detection.pb.cc.o
+	$(MAKE) -f CMakeFiles/furgbol_operators.dir/build.make CMakeFiles/furgbol_operators.dir/messages_robocup_ssl_detection.pb.cc.o
 .PHONY : messages_robocup_ssl_detection.pb.cc.o
 
 messages_robocup_ssl_detection.pb.i: messages_robocup_ssl_detection.pb.cc.i
@@ -246,6 +282,7 @@ messages_robocup_ssl_detection.pb.i: messages_robocup_ssl_detection.pb.cc.i
 # target to preprocess a source file
 messages_robocup_ssl_detection.pb.cc.i:
 	$(MAKE) -f CMakeFiles/furgbol_serialization.dir/build.make CMakeFiles/furgbol_serialization.dir/messages_robocup_ssl_detection.pb.cc.i
+	$(MAKE) -f CMakeFiles/furgbol_operators.dir/build.make CMakeFiles/furgbol_operators.dir/messages_robocup_ssl_detection.pb.cc.i
 .PHONY : messages_robocup_ssl_detection.pb.cc.i
 
 messages_robocup_ssl_detection.pb.s: messages_robocup_ssl_detection.pb.cc.s
@@ -255,6 +292,7 @@ messages_robocup_ssl_detection.pb.s: messages_robocup_ssl_detection.pb.cc.s
 # target to generate assembly for a file
 messages_robocup_ssl_detection.pb.cc.s:
 	$(MAKE) -f CMakeFiles/furgbol_serialization.dir/build.make CMakeFiles/furgbol_serialization.dir/messages_robocup_ssl_detection.pb.cc.s
+	$(MAKE) -f CMakeFiles/furgbol_operators.dir/build.make CMakeFiles/furgbol_operators.dir/messages_robocup_ssl_detection.pb.cc.s
 .PHONY : messages_robocup_ssl_detection.pb.cc.s
 
 messages_robocup_ssl_geometry.pb.o: messages_robocup_ssl_geometry.pb.cc.o
@@ -264,6 +302,7 @@ messages_robocup_ssl_geometry.pb.o: messages_robocup_ssl_geometry.pb.cc.o
 # target to build an object file
 messages_robocup_ssl_geometry.pb.cc.o:
 	$(MAKE) -f CMakeFiles/furgbol_serialization.dir/build.make CMakeFiles/furgbol_serialization.dir/messages_robocup_ssl_geometry.pb.cc.o
+	$(MAKE) -f CMakeFiles/furgbol_operators.dir/build.make CMakeFiles/furgbol_operators.dir/messages_robocup_ssl_geometry.pb.cc.o
 .PHONY : messages_robocup_ssl_geometry.pb.cc.o
 
 messages_robocup_ssl_geometry.pb.i: messages_robocup_ssl_geometry.pb.cc.i
@@ -273,6 +312,7 @@ messages_robocup_ssl_geometry.pb.i: messages_robocup_ssl_geometry.pb.cc.i
 # target to preprocess a source file
 messages_robocup_ssl_geometry.pb.cc.i:
 	$(MAKE) -f CMakeFiles/furgbol_serialization.dir/build.make CMakeFiles/furgbol_serialization.dir/messages_robocup_ssl_geometry.pb.cc.i
+	$(MAKE) -f CMakeFiles/furgbol_operators.dir/build.make CMakeFiles/furgbol_operators.dir/messages_robocup_ssl_geometry.pb.cc.i
 .PHONY : messages_robocup_ssl_geometry.pb.cc.i
 
 messages_robocup_ssl_geometry.pb.s: messages_robocup_ssl_geometry.pb.cc.s
@@ -282,6 +322,7 @@ messages_robocup_ssl_geometry.pb.s: messages_robocup_ssl_geometry.pb.cc.s
 # target to generate assembly for a file
 messages_robocup_ssl_geometry.pb.cc.s:
 	$(MAKE) -f CMakeFiles/furgbol_serialization.dir/build.make CMakeFiles/furgbol_serialization.dir/messages_robocup_ssl_geometry.pb.cc.s
+	$(MAKE) -f CMakeFiles/furgbol_operators.dir/build.make CMakeFiles/furgbol_operators.dir/messages_robocup_ssl_geometry.pb.cc.s
 .PHONY : messages_robocup_ssl_geometry.pb.cc.s
 
 messages_robocup_ssl_refbox_log.pb.o: messages_robocup_ssl_refbox_log.pb.cc.o
@@ -291,6 +332,7 @@ messages_robocup_ssl_refbox_log.pb.o: messages_robocup_ssl_refbox_log.pb.cc.o
 # target to build an object file
 messages_robocup_ssl_refbox_log.pb.cc.o:
 	$(MAKE) -f CMakeFiles/furgbol_serialization.dir/build.make CMakeFiles/furgbol_serialization.dir/messages_robocup_ssl_refbox_log.pb.cc.o
+	$(MAKE) -f CMakeFiles/furgbol_operators.dir/build.make CMakeFiles/furgbol_operators.dir/messages_robocup_ssl_refbox_log.pb.cc.o
 .PHONY : messages_robocup_ssl_refbox_log.pb.cc.o
 
 messages_robocup_ssl_refbox_log.pb.i: messages_robocup_ssl_refbox_log.pb.cc.i
@@ -300,6 +342,7 @@ messages_robocup_ssl_refbox_log.pb.i: messages_robocup_ssl_refbox_log.pb.cc.i
 # target to preprocess a source file
 messages_robocup_ssl_refbox_log.pb.cc.i:
 	$(MAKE) -f CMakeFiles/furgbol_serialization.dir/build.make CMakeFiles/furgbol_serialization.dir/messages_robocup_ssl_refbox_log.pb.cc.i
+	$(MAKE) -f CMakeFiles/furgbol_operators.dir/build.make CMakeFiles/furgbol_operators.dir/messages_robocup_ssl_refbox_log.pb.cc.i
 .PHONY : messages_robocup_ssl_refbox_log.pb.cc.i
 
 messages_robocup_ssl_refbox_log.pb.s: messages_robocup_ssl_refbox_log.pb.cc.s
@@ -309,6 +352,7 @@ messages_robocup_ssl_refbox_log.pb.s: messages_robocup_ssl_refbox_log.pb.cc.s
 # target to generate assembly for a file
 messages_robocup_ssl_refbox_log.pb.cc.s:
 	$(MAKE) -f CMakeFiles/furgbol_serialization.dir/build.make CMakeFiles/furgbol_serialization.dir/messages_robocup_ssl_refbox_log.pb.cc.s
+	$(MAKE) -f CMakeFiles/furgbol_operators.dir/build.make CMakeFiles/furgbol_operators.dir/messages_robocup_ssl_refbox_log.pb.cc.s
 .PHONY : messages_robocup_ssl_refbox_log.pb.cc.s
 
 messages_robocup_ssl_wrapper.pb.o: messages_robocup_ssl_wrapper.pb.cc.o
@@ -318,6 +362,7 @@ messages_robocup_ssl_wrapper.pb.o: messages_robocup_ssl_wrapper.pb.cc.o
 # target to build an object file
 messages_robocup_ssl_wrapper.pb.cc.o:
 	$(MAKE) -f CMakeFiles/furgbol_serialization.dir/build.make CMakeFiles/furgbol_serialization.dir/messages_robocup_ssl_wrapper.pb.cc.o
+	$(MAKE) -f CMakeFiles/furgbol_operators.dir/build.make CMakeFiles/furgbol_operators.dir/messages_robocup_ssl_wrapper.pb.cc.o
 .PHONY : messages_robocup_ssl_wrapper.pb.cc.o
 
 messages_robocup_ssl_wrapper.pb.i: messages_robocup_ssl_wrapper.pb.cc.i
@@ -327,6 +372,7 @@ messages_robocup_ssl_wrapper.pb.i: messages_robocup_ssl_wrapper.pb.cc.i
 # target to preprocess a source file
 messages_robocup_ssl_wrapper.pb.cc.i:
 	$(MAKE) -f CMakeFiles/furgbol_serialization.dir/build.make CMakeFiles/furgbol_serialization.dir/messages_robocup_ssl_wrapper.pb.cc.i
+	$(MAKE) -f CMakeFiles/furgbol_operators.dir/build.make CMakeFiles/furgbol_operators.dir/messages_robocup_ssl_wrapper.pb.cc.i
 .PHONY : messages_robocup_ssl_wrapper.pb.cc.i
 
 messages_robocup_ssl_wrapper.pb.s: messages_robocup_ssl_wrapper.pb.cc.s
@@ -336,6 +382,7 @@ messages_robocup_ssl_wrapper.pb.s: messages_robocup_ssl_wrapper.pb.cc.s
 # target to generate assembly for a file
 messages_robocup_ssl_wrapper.pb.cc.s:
 	$(MAKE) -f CMakeFiles/furgbol_serialization.dir/build.make CMakeFiles/furgbol_serialization.dir/messages_robocup_ssl_wrapper.pb.cc.s
+	$(MAKE) -f CMakeFiles/furgbol_operators.dir/build.make CMakeFiles/furgbol_operators.dir/messages_robocup_ssl_wrapper.pb.cc.s
 .PHONY : messages_robocup_ssl_wrapper.pb.cc.s
 
 src/io/multicast_receiver.o: src/io/multicast_receiver.cc.o
@@ -391,6 +438,33 @@ src/main.s: src/main.cc.s
 src/main.cc.s:
 	$(MAKE) -f CMakeFiles/furgbol.dir/build.make CMakeFiles/furgbol.dir/src/main.cc.s
 .PHONY : src/main.cc.s
+
+src/operators/operators.o: src/operators/operators.cc.o
+
+.PHONY : src/operators/operators.o
+
+# target to build an object file
+src/operators/operators.cc.o:
+	$(MAKE) -f CMakeFiles/furgbol_operators.dir/build.make CMakeFiles/furgbol_operators.dir/src/operators/operators.cc.o
+.PHONY : src/operators/operators.cc.o
+
+src/operators/operators.i: src/operators/operators.cc.i
+
+.PHONY : src/operators/operators.i
+
+# target to preprocess a source file
+src/operators/operators.cc.i:
+	$(MAKE) -f CMakeFiles/furgbol_operators.dir/build.make CMakeFiles/furgbol_operators.dir/src/operators/operators.cc.i
+.PHONY : src/operators/operators.cc.i
+
+src/operators/operators.s: src/operators/operators.cc.s
+
+.PHONY : src/operators/operators.s
+
+# target to generate assembly for a file
+src/operators/operators.cc.s:
+	$(MAKE) -f CMakeFiles/furgbol_operators.dir/build.make CMakeFiles/furgbol_operators.dir/src/operators/operators.cc.s
+.PHONY : src/operators/operators.cc.s
 
 src/serialization/ssl_detection_aggregator.o: src/serialization/ssl_detection_aggregator.cc.o
 
@@ -473,6 +547,33 @@ src/serialization/ssl_wrapper_parser.cc.s:
 	$(MAKE) -f CMakeFiles/furgbol_serialization.dir/build.make CMakeFiles/furgbol_serialization.dir/src/serialization/ssl_wrapper_parser.cc.s
 .PHONY : src/serialization/ssl_wrapper_parser.cc.s
 
+src/sources/sources.o: src/sources/sources.cc.o
+
+.PHONY : src/sources/sources.o
+
+# target to build an object file
+src/sources/sources.cc.o:
+	$(MAKE) -f CMakeFiles/furgbol_sources.dir/build.make CMakeFiles/furgbol_sources.dir/src/sources/sources.cc.o
+.PHONY : src/sources/sources.cc.o
+
+src/sources/sources.i: src/sources/sources.cc.i
+
+.PHONY : src/sources/sources.i
+
+# target to preprocess a source file
+src/sources/sources.cc.i:
+	$(MAKE) -f CMakeFiles/furgbol_sources.dir/build.make CMakeFiles/furgbol_sources.dir/src/sources/sources.cc.i
+.PHONY : src/sources/sources.cc.i
+
+src/sources/sources.s: src/sources/sources.cc.s
+
+.PHONY : src/sources/sources.s
+
+# target to generate assembly for a file
+src/sources/sources.cc.s:
+	$(MAKE) -f CMakeFiles/furgbol_sources.dir/build.make CMakeFiles/furgbol_sources.dir/src/sources/sources.cc.s
+.PHONY : src/sources/sources.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -480,10 +581,12 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... furgbol"
-	@echo "... furgbol_io"
-	@echo "... edit_cache"
 	@echo "... furgbol_serialization"
+	@echo "... furgbol_operators"
+	@echo "... edit_cache"
+	@echo "... furgbol_io"
+	@echo "... furgbol_sources"
+	@echo "... furgbol"
 	@echo "... grSim_Commands.pb.o"
 	@echo "... grSim_Commands.pb.i"
 	@echo "... grSim_Commands.pb.s"
@@ -511,6 +614,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/operators/operators.o"
+	@echo "... src/operators/operators.i"
+	@echo "... src/operators/operators.s"
 	@echo "... src/serialization/ssl_detection_aggregator.o"
 	@echo "... src/serialization/ssl_detection_aggregator.i"
 	@echo "... src/serialization/ssl_detection_aggregator.s"
@@ -520,6 +626,9 @@ help:
 	@echo "... src/serialization/ssl_wrapper_parser.o"
 	@echo "... src/serialization/ssl_wrapper_parser.i"
 	@echo "... src/serialization/ssl_wrapper_parser.s"
+	@echo "... src/sources/sources.o"
+	@echo "... src/sources/sources.i"
+	@echo "... src/sources/sources.s"
 .PHONY : help
 
 
