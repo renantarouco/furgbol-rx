@@ -3,6 +3,7 @@ project(furgbol)
 
 find_package(Boost REQUIRED COMPONENTS system)
 find_package(Protobuf REQUIRED)
+find_package(Curses REQUIRED)
 
 protobuf_generate_cpp(PROTO_CPP PROTO_H
     src/serialization/proto/messages_robocup_ssl_detection.proto
@@ -19,7 +20,8 @@ include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
     "ext/RxCpp/Rx/v2/src"
     ${Boost_INCLUDE_DIRS}
-    ${PROTOBUF_INCLUDE_DIRS})
+    ${PROTOBUF_INCLUDE_DIRS}
+    ${CURSES_INCLUDE_DIR})
 
 add_library(furgbol_io
     "src/io/multicast_receiver.cc")
@@ -51,4 +53,5 @@ target_link_libraries(furgbol
     furgbol_io
     furgbol_serialization
     furgbol_sources
-    furgbol_operators)
+    furgbol_operators
+    ${CURSES_LIBRARIES})
