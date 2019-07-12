@@ -10,9 +10,9 @@ namespace furgbol {
 namespace consumers {
     class WebsocketServer {
     public:
-        WebsocketServer(unsigned int);
+        WebsocketServer(unsigned);
     private:
-        unsigned int port_;
+        unsigned port_;
     };
 }
 }

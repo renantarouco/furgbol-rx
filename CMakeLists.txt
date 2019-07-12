@@ -50,8 +50,14 @@ add_library(furgbol_operators
 target_link_libraries(furgbol_operators
     ssl_proto)
 
+add_library(furgbol_consumers
+    "src/consumers/websocket_server.cc")
+target_link_libraries(furgbol_consumers
+    ${Boost_SYSTEM_LIBRARY})
+
 add_executable(furgbol
     "src/main.cc")
 target_link_libraries(furgbol
     furgbol_sources
-    furgbol_operators)
+    furgbol_operators
+    furgbol_consumers)
