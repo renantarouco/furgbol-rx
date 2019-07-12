@@ -35,15 +35,28 @@ std::string json_str(google::protobuf::Message *message) {
 }
 
 int main() {
-  //MulticastReceiver mr("224.5.23.1", 10003, 4096);
-  SSL_Referee *referee = new SSL_Referee;
-  DEBUG(json_str(referee))
-  // auto json_ref$ = mr.datagram() |
-  //   parse_referee() |
-  //   serialize_to_json() |
-  //   take(1);
-  // json_ref$
-  //   .subscribe(
-  //     [](std::string json_str) { DEBUG(json_str) });
+  // Instantiate sources.
+  MulticastReceiver vision_mr("224.5.23.1", 10003, 4096);
+  MulticastReceiver referee_mr("224.5.23.1", 10003, 4096);
+  // Assembly streams.
+  auto detection_stream = vision_mr.datagram() |
+    parse_wrapper() |
+    get_detection() |
+    aggregate_cameras(4) |
+    serialize_to_json();
+  auto referee_stream = referee_mr.datagram() |
+    parse_referee();
+  auto geometry_stream = vision_mr.datagram() |
+    parse_wrapper() |
+    get_geometry() |
+    serialize_to_json();
+  // Instantiate subscribers.
+  // WebsocketServer detection_ws();
+  // WebsocketServer referee_ws();
+  // Bind streams and subscribers.
+  // detection_stream.subscribe_on(observe_on_new_thread())
+  //   .subscribe(detection_ws.subscriber);
+  // referee_stream.subscribe_on(observe_on_new_thread())
+  //   .subscribe(referee_ws.subscriber);
   return 0;
 }
