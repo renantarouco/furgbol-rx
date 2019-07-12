@@ -29,7 +29,6 @@ include_directories(
     "include"
     ${CMAKE_CURRENT_BINARY_DIR}
     "ext/RxCpp/Rx/v2/src"
-    "ext/beast/include"
     ${Boost_INCLUDE_DIRS}
     ${PROTOBUF_INCLUDE_DIRS})
 
