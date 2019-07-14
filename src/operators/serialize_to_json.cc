@@ -4,7 +4,6 @@
 
 namespace furgbol {
 namespace operators {
-    template<class T>
     std::function<rxcpp::observable<std::string>(rxcpp::observable<google::protobuf::Message*>)> serialize_to_json() {
         return [](rxcpp::observable<google::protobuf::Message*> message) {
             return message |
