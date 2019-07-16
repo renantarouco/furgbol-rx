@@ -29,10 +29,16 @@ target_link_libraries(furgbol_operators
     "${CMAKE_CURRENT_SOURCE_DIR}/ext/ssl_proto/lib/libssl_proto_sslvision.a"
     "${CMAKE_CURRENT_SOURCE_DIR}/ext/ssl_proto/lib/libssl_proto_refbox.a")
 
+add_library(furgbol_consumers
+    "src/consumers/websocket_server.cc")
+target_link_libraries(furgbol_consumers
+    ${Boost_LIBRARIES})
+
 add_executable(furgbol
     "src/main.cc")
 target_link_libraries(furgbol
     furgbol_sources
     furgbol_operators
+    furgbol_consumers
     ${Boost_LIBRARIES}
     ${PROTOBUF_LIBRARIES})
