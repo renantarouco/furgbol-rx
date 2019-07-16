@@ -2,7 +2,6 @@
 #define INCLUDE_SOURCES_MULTICAST_RECEIVER_H
 
 #include <string>
-#include <functional>
 
 #include <rxcpp/rx.hpp>
 #include <boost/asio.hpp>
@@ -20,7 +19,6 @@ namespace sources {
         int buffer_size_;
         char *buffer_;
     };
-    rxcpp::observable<std::string> multicast_datagram(std::string, int, int);
 }
 }
 
