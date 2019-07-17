@@ -10,7 +10,7 @@
 
 #include "definitions/definitions.h"
 #include "sources/multicast_receiver.h"
-#include "operators/operators.h"
+#include "operations/operations.h"
 #include "consumers/websocket_sender.h"
 
 #include <boost/asio.hpp>
@@ -29,7 +29,7 @@
 namespace Rx {
 using namespace rxcpp;
 using namespace rxcpp::sources;
-using namespace rxcpp::operators;
+using namespace rxcpp::operations;
 using namespace rxcpp::subjects;
 using namespace rxcpp::util;
 }
@@ -38,15 +38,14 @@ using namespace Rx;
 namespace Furgbol {
   using namespace furgbol::definitions;
   using namespace furgbol::sources;
-  using namespace furgbol::operators;
+  using namespace furgbol::operations;
   using namespace furgbol::consumers;
 }
 using namespace Furgbol;
 
 int main() {
-  auto test = interval(std::chrono::seconds(1)) |
-    map([](int v) { return std::to_string(v); });
-  WebsocketSender ref_ws(9002);
-  ref_ws.run();
+  MulticastReceiver mr("224.2.23.1", 10003, 4096);
+  auto referee = mr.datagram() | parse_referee();
+  referee.subscribe([](furgbol::sptr<SSL_Referee> ref) { std::cout << ref->DebugString() << std::endl; });
   return 0;
 }

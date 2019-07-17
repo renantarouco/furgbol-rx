@@ -17,15 +17,15 @@ add_library(furgbol_sources
 target_link_libraries(furgbol_sources
     ${Boost_SYSTEM_LIBRARY})
 
-add_library(furgbol_operators
-    "src/operators/parse_wrapper.cc"
-    "src/operators/parse_referee.cc"
-    "src/operators/get_detection.cc"
-    "src/operators/get_geometry.cc"
-    "src/operators/aggregate_cameras.cc"
-    "src/operators/normalize_ball.cc"
-    "src/operators/normalize_robots.cc")
-target_link_libraries(furgbol_operators
+add_library(furgbol_operations
+    "src/operations/parse_wrapper.cc"
+    "src/operations/parse_referee.cc"
+    "src/operations/get_detection.cc"
+    "src/operations/get_geometry.cc"
+    "src/operations/aggregate_cameras.cc"
+    "src/operations/normalize_ball.cc"
+    "src/operations/normalize_robots.cc")
+target_link_libraries(furgbol_operations
     "${CMAKE_CURRENT_SOURCE_DIR}/ext/ssl_proto/lib/libssl_proto_sslvision.a"
     "${CMAKE_CURRENT_SOURCE_DIR}/ext/ssl_proto/lib/libssl_proto_refbox.a")
 
@@ -39,7 +39,7 @@ add_executable(furgbol
     "src/main.cc")
 target_link_libraries(furgbol
     furgbol_sources
-    furgbol_operators
+    furgbol_operations
     furgbol_consumers
     ${Boost_LIBRARIES}
     ${PROTOBUF_LIBRARIES})

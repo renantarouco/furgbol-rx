@@ -3,21 +3,23 @@
 
 #include <string>
 
-#include <rxcpp/rx.hpp>
 #include <boost/asio.hpp>
+
+#include "definitions/definitions.h"
 
 namespace furgbol {
 namespace sources {
+    namespace asio = boost::asio;
     class MulticastReceiver {
     public:
         MulticastReceiver(std::string, int, int);
-        rxcpp::observable<std::string> datagram();
+        observable<std::string> datagram();
     private:
-        boost::asio::io_service io_;
-        boost::asio::ip::udp::socket socket_;
-        boost::asio::ip::udp::endpoint endpoint_;
+        asio::io_service io_;
+        asio::ip::udp::socket socket_;
+        asio::ip::udp::endpoint endpoint_;
         int buffer_size_;
-        char *buffer_;
+        char* buffer_;
     };
 }
 }
