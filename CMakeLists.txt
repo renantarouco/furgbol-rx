@@ -30,7 +30,8 @@ target_link_libraries(furgbol_operators
     "${CMAKE_CURRENT_SOURCE_DIR}/ext/ssl_proto/lib/libssl_proto_refbox.a")
 
 add_library(furgbol_consumers
-    "src/consumers/websocket_server.cc")
+    "src/consumers/websocket_server.cc"
+    "src/consumers/websocket_sender.cc")
 target_link_libraries(furgbol_consumers
     ${Boost_LIBRARIES})
 

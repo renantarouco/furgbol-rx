@@ -11,7 +11,7 @@
 #include "definitions/definitions.h"
 #include "sources/multicast_receiver.h"
 #include "operators/operators.h"
-#include "consumers/websocket_server.h"
+#include "consumers/websocket_sender.h"
 
 #include <boost/asio.hpp>
 #include <boost/beast.hpp>
@@ -44,19 +44,9 @@ namespace Furgbol {
 using namespace Furgbol;
 
 int main() {
-  MulticastReceiver referee_mr("224.5.23.1", 10003, 4096);
-  auto referee_json_stream = referee_mr.datagram() |
-    parse_referee() |
-    map([](SSL_Referee message) {
-      google::protobuf::util::JsonPrintOptions options;
-      options.always_print_primitive_fields = true;
-      std::string json_str;
-      google::protobuf::util::MessageToJsonString(message, &json_str, options);
-      return json_str; }) |
-    publish() |
-    ref_count() |
-    as_dynamic();
-  WebsocketServer referee_ws(9002);
-  referee_ws.run();  
+  auto test = interval(std::chrono::seconds(1)) |
+    map([](int v) { return std::to_string(v); });
+  WebsocketSender ref_ws(9002);
+  ref_ws.run();
   return 0;
 }
