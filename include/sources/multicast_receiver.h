@@ -13,7 +13,7 @@ namespace sources {
     class MulticastReceiver {
     public:
         MulticastReceiver(std::string, int, int);
-        observable<std::string> datagram();
+        observable<sptr<std::string>> datagram();
     private:
         asio::io_service io_;
         asio::ip::udp::socket socket_;

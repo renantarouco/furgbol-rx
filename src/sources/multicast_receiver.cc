@@ -17,14 +17,16 @@ namespace sources {
             asio::ip::multicast::join_group(
                 asio::ip::address::from_string(group_ip)));
     }
-    observable<std::string> MulticastReceiver::datagram() {
-        return observable<>::create<std::string>(
-            [this](subscriber<std::string> s){
+    observable<sptr<std::string>> MulticastReceiver::datagram() {
+        return observable<>::create<sptr<std::string>>(
+            [this](subscriber<sptr<std::string>> s){
                 while (1) {
                     size_t n = socket_.receive_from(
                         asio::buffer(buffer_, buffer_size_),
                         endpoint_);
-                    s.on_next(std::move(std::string(buffer_, n)));
+                    s.on_next(
+                        std::make_shared<std::string>(
+                            std::move(std::string(buffer_, n))));
                 }});
     }
 }

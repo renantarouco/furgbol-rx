@@ -1,17 +1,15 @@
-#include "operators/operators.h"
+#include "operations/operations.h"
 
 namespace furgbol {
-namespace operators {
-    std::function<
-        rxcpp::observable<SSL_DetectionFrame>(
-            rxcpp::observable<SSL_WrapperPacket>)>
-                get_detection() {
-                    return [](rxcpp::observable<SSL_WrapperPacket> packet) {
-                        return packet |
-                            rxcpp::operators::filter([](SSL_WrapperPacket wp){
-                                return wp.has_detection(); }) |
-                            rxcpp::operators::map([](SSL_WrapperPacket wp){
-                                return wp.detection(); });};
-    }
+namespace operations {
+  furgbol_op_t<SSL_WrapperPacket, SSL_DetectionFrame> get_detection() {
+    return [](observable<sptr<SSL_WrapperPacket>> packet$) {
+      return packet$ |
+        operators::filter([](sptr<SSL_WrapperPacket> wp){
+          return wp->has_detection(); }) |
+        operators::map([](sptr<SSL_WrapperPacket> wp){
+          return std::make_shared<SSL_DetectionFrame>(
+            std::move(wp->detection())); });};
+  }
 }
 }

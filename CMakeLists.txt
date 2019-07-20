@@ -22,7 +22,7 @@ add_library(furgbol_operations
     "src/operations/parse_referee.cc"
     "src/operations/get_detection.cc"
     "src/operations/get_geometry.cc"
-    "src/operations/aggregate_cameras.cc"
+    "src/operations/merge_cameras.cc"
     "src/operations/normalize_ball.cc"
     "src/operations/normalize_robots.cc")
 target_link_libraries(furgbol_operations

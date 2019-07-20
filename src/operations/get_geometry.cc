@@ -1,14 +1,15 @@
-#include "operators/operators.h"
+#include "operations/operations.h"
 
 namespace furgbol {
-namespace operators {
-    std::function<rxcpp::observable<SSL_GeometryData>(rxcpp::observable<SSL_WrapperPacket>)> get_geometry() {
-        return [](rxcpp::observable<SSL_WrapperPacket> packet) {
-            return packet |
-                rxcpp::operators::filter([](SSL_WrapperPacket wp){
-                    return wp.has_geometry(); }) |
-                rxcpp::operators::map([](SSL_WrapperPacket wp){
-                    return wp.geometry(); });};
-    }
+namespace operations {
+  furgbol_op_t<SSL_WrapperPacket, SSL_GeometryData> get_geometry() {
+    return [](observable<sptr<SSL_WrapperPacket>> packet$) {
+      return packet$ |
+        operators::filter([](sptr<SSL_WrapperPacket> wp){
+          return wp->has_geometry(); }) |
+        operators::map([](sptr<SSL_WrapperPacket> wp){
+          return std::make_shared<SSL_GeometryData>(
+            std::move(wp->geometry())); });};
+  }
 }
 }

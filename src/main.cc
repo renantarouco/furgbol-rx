@@ -13,10 +13,6 @@
 #include "operations/operations.h"
 #include "consumers/websocket_sender.h"
 
-#include <boost/asio.hpp>
-#include <boost/beast.hpp>
-#include <boost/beast/websocket.hpp>
-
 // Leitura de amanhã:
 // https://www.youtube.com/watch?v=QGcVXgEVMJg
 // https://flames-of-code.netlify.com/blog/rxcpp-copy-operator/
@@ -29,13 +25,14 @@
 namespace Rx {
 using namespace rxcpp;
 using namespace rxcpp::sources;
-using namespace rxcpp::operations;
+using namespace rxcpp::operators;
 using namespace rxcpp::subjects;
 using namespace rxcpp::util;
 }
 using namespace Rx;
 
 namespace Furgbol {
+  using namespace furgbol;
   using namespace furgbol::definitions;
   using namespace furgbol::sources;
   using namespace furgbol::operations;
@@ -44,8 +41,10 @@ namespace Furgbol {
 using namespace Furgbol;
 
 int main() {
-  MulticastReceiver mr("224.2.23.1", 10003, 4096);
-  auto referee = mr.datagram() | parse_referee();
-  referee.subscribe([](furgbol::sptr<SSL_Referee> ref) { std::cout << ref->DebugString() << std::endl; });
+  MulticastReceiver ref_mr("224.5.23.1", 10003, 4096);
+  observable<sptr<SSL_Referee>> referee$ = ref_mr.datagram() |
+    parse_referee();
+  referee$.subscribe([](sptr<SSL_Referee> referee) {
+    DBG(referee->DebugString()) });
   return 0;
 }
