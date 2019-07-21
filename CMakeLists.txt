@@ -24,7 +24,8 @@ add_library(furgbol_operations
     "src/operations/get_geometry.cc"
     "src/operations/merge_cameras.cc"
     "src/operations/normalize_ball.cc"
-    "src/operations/normalize_robots.cc")
+    "src/operations/normalize_robots.cc"
+    "src/operations/serialize_to_json.cc")
 target_link_libraries(furgbol_operations
     "${CMAKE_CURRENT_SOURCE_DIR}/ext/ssl_proto/lib/libssl_proto_sslvision.a"
     "${CMAKE_CURRENT_SOURCE_DIR}/ext/ssl_proto/lib/libssl_proto_refbox.a")

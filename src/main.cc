@@ -43,8 +43,9 @@ using namespace Furgbol;
 int main() {
   MulticastReceiver ref_mr("224.5.23.1", 10003, 4096);
   observable<sptr<SSL_Referee>> referee$ = ref_mr.datagram() |
-    parse_referee();
-  referee$.subscribe([](sptr<SSL_Referee> referee) {
-    DBG(referee->DebugString()) });
+    parse_referee() |
+    serialize_to_json();
+  referee$.subscribe([](std::string referee_json) {
+    DBG(referee_json) });
   return 0;
 }

@@ -4,10 +4,13 @@
 #include <functional>
 #include <vector>
 
+#include <google/protobuf/util/json_util.h>
+
 #include "sslvision/messages_robocup_ssl_wrapper.pb.h"
 #include "refbox/referee.pb.h"
 
 #include "definitions/definitions.h"
+#include "models/object.h"
 
 namespace furgbol {
 namespace operations {
@@ -20,6 +23,8 @@ namespace operations {
   furgbol_op_t<SSL_DetectionFrame, SSL_DetectionFrame> merge_cameras(int);
   furgbol_op_t<SSL_DetectionFrame, SSL_DetectionFrame> normalize_ball();
   furgbol_op_t<SSL_DetectionFrame, SSL_DetectionFrame> normalize_robots(int, definitions::TeamColor);
+  std::string to_json(const SSL_Referee&);
+  std::function<observable<std::string>(observable<sptr<models::json_serializable_t>>)> serialize_to_json();
 }
 }
 
